@@ -11,36 +11,37 @@ private:
     int     Grade;
 public:
     Bureaucrat();
-    Bureaucrat(std::string name,int grade);
+    Bureaucrat(std::string name,int grade):Name(name){
+        	if(grade > 150)
+		throw higher;
+	if (grade < 0)
+		throw lesser;
+	
+	this->Grade = grade;
+}
     Bureaucrat(const Bureaucrat &copy);
     ~Bureaucrat();
     Bureaucrat & operator=(const Bureaucrat &rhs);
 
+    
     class HigherRange : public std::exception 
     {
-        virtual const char * whate() const throw()
+        virtual const char * what() const throw()
         {
             return ("The Grade is Too high . Try again !!\n");
         }        
-    };
+    }higher;
     
-    class HigherRange : public std::exception 
+    class LowerRange : public std::exception 
     {
         virtual const char * whate() const throw()
         {
             return ("The Grade is Too Low . Try again !!\n");
         }        
-    };
+    }lesser;
     
 };
 
-Bureaucrat::Bureaucrat(/* args */)
-{
-}
-
-Bureaucrat::~Bureaucrat()
-{
-}
 
 
 
