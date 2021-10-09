@@ -1,0 +1,57 @@
+#include "Bureaucrat.hpp"
+
+Bureaucrat::Bureaucrat()
+{
+	;
+}
+Bureaucrat::Bureaucrat(const std::string name, int grade):Name(name)
+{
+    if(grade > 150)
+		throw lesser;
+	if (grade < 1)
+		throw higher;
+	this->Grade = grade;
+}
+Bureaucrat::~Bureaucrat()
+{
+	;
+}
+Bureaucrat::Bureaucrat(const Bureaucrat &copy): Name(copy.Name)
+{
+	this->Grade = copy.Grade;
+}
+
+Bureaucrat & Bureaucrat::operator=(const Bureaucrat &rhs) 
+{
+	this->Grade =  rhs.Grade;
+	return *this;
+}
+
+const std::string Bureaucrat::getName()
+{
+	return (this->Name);
+}
+
+const int Bureaucrat::getGrade()
+{
+	return (this->Grade);
+}
+
+void	Bureaucrat::Increment()
+{
+	if (this->Grade == 1)
+		throw higher;
+	this->Grade--;
+}
+void	Bureaucrat::Decrement()
+{
+	if (this->Grade == 150)
+		throw lesser;
+	this->Grade++;
+}
+
+std::ostream & operator<<(std::ostream & out,Bureaucrat  &a)
+{
+	out << a.getName() << " Bureaucrat Grade " << a.getGrade() << std::endl;
+	return(out);
+}
