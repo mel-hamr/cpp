@@ -17,11 +17,13 @@ class Form
         Form(const Form &copy);
         Form &operator=(const Form &rhs);
 
-        const std::string getName();
+        std::string getName()const ;
         const int getGradeToSign();
         const int getGradeToExecute();
         const int getSign();
         void    beSigned(Bureaucrat &bureaucrat);
+        virtual void    Action() = 0;
+        
     class HigherRange : public std::exception 
     {
         virtual const char * what() const throw()

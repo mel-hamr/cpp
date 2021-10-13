@@ -7,9 +7,9 @@ Bureaucrat::Bureaucrat()
 Bureaucrat::Bureaucrat(const std::string name, int grade):Name(name)
 {
     if(grade > 150)
-		throw lesser;
+		throw GradeTooLowException();
 	if (grade < 1)
-		throw higher;
+		throw GradeTooHighException();
 	this->Grade = grade;
 }
 Bureaucrat::~Bureaucrat()
@@ -40,13 +40,13 @@ const int Bureaucrat::getGrade()
 void	Bureaucrat::Increment()
 {
 	if (this->Grade == 1)
-		throw higher;
+		throw GradeTooHighException();
 	this->Grade--;
 }
 void	Bureaucrat::Decrement()
 {
 	if (this->Grade == 150)
-		throw lesser;
+		throw GradeTooLowException();
 	this->Grade++;
 }
 
