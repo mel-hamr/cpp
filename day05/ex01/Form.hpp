@@ -17,26 +17,26 @@ class Form
         Form(const Form &copy);
         Form &operator=(const Form &rhs);
 
-        const std::string getName();
+        const std::string getName()const ;
         const int getGradeToSign();
         const int getGradeToExecute();
-        const int getSign();
+        bool getSign()const ;
         void    beSigned(Bureaucrat &bureaucrat);
-    class HigherRange : public std::exception 
+    class GradeTooHighException : public std::exception 
     {
         virtual const char * what() const throw()
         {
             return ("The Grade is Too high . Try again !!\n");
         }        
-    }higher;
+    };
     
-    class LowerRange : public std::exception 
+    class GradeTooLowException : public std::exception 
     {
         virtual const char * what() const throw()
         {
             return ("The Grade is Too Low . Try again !!\n");
         }        
-    }lesser;
+    };
 };
 
 std::ostream & operator<<(std::ostream & out,Form  &a);

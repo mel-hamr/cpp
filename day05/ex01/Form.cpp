@@ -8,9 +8,9 @@ Form::Form() : Name("bureau") , Grade_to_sign(150) , Grade_to_execute(150)
 Form::Form(std::string name , int grade_to_sign , int grade_to_execute) : Name(name) , Grade_to_sign(grade_to_sign) , Grade_to_execute(grade_to_execute)
 {
     if(Grade_to_execute > 150 || grade_to_sign > 150)
-		throw lesser;
+		throw GradeTooLowException();
 	if (Grade_to_execute < 1 || grade_to_sign < 1)
-		throw higher;
+		throw GradeTooHighException();
     this->Signed = false;
 }
 
@@ -29,7 +29,7 @@ Form & Form::operator=(const Form &rhs)
     return (*this);
 }
 
-const std::string Form::getName()
+const std::string Form::getName() const
 {
     return (Name);
 }
@@ -41,7 +41,7 @@ const int Form::getGradeToExecute()
 {
     return (Grade_to_execute);
 }
-const int Form::getSign()
+bool Form::getSign() const 
 {
     return (Signed);
 }
@@ -50,7 +50,7 @@ void    Form::beSigned(Bureaucrat &bureaucrat)
     if(bureaucrat.getGrade() <= this->Grade_to_sign)
         this->Signed = true;
     else
-        throw lesser;
+        throw GradeTooLowException();
 }
 std::ostream & operator<<(std::ostream & out,Form  &a)
 {
