@@ -20,6 +20,13 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &cop
     this->target = copy.target;
 }
 
+PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPardonForm &rhs)
+{
+    this->target = rhs.target;
+    return (*this);
+}
+
+
 void PresidentialPardonForm::Action() const 
 {
     std::cout << this->target << " has been pardoned by Zafod Beeblebrox" << std::endl;

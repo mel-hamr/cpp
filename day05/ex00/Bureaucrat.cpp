@@ -55,3 +55,13 @@ std::ostream & operator<<(std::ostream & out,Bureaucrat  &a)
 	out << a.getName() << " Bureaucrat Grade " << a.getGrade() << std::endl;
 	return(out);
 }
+
+const char * Bureaucrat::GradeTooHighException::what()const throw()
+{
+    return ("The Grade is Too high . Try again !!\n");
+}
+
+const char * Bureaucrat::GradeTooLowException::what()const throw()
+{
+    return ("The Grade is Too Low . Try again !!\n");
+}

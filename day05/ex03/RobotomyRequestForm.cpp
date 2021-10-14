@@ -16,6 +16,12 @@ RobotomyRequestForm::~RobotomyRequestForm()
     ;
 }
 
+RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &rhs)
+{
+    this->target = rhs.target;
+    return (*this);
+}
+
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) : Form(copy.getName(),72,45)
 {
     this->target = copy.target;

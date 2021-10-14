@@ -62,9 +62,23 @@ std::ostream & operator<<(std::ostream & out,Form  &a)
 void Form::execute(Bureaucrat const &executor) const
 {
 
-	if ((this->getSign())==0)
+	if (this->getSign()==0)
 		throw FormNotSignedException();
 	if (this->getGradeToExecute() < executor.getGrade())
 		throw GradeTooLowException();
 	Action();
+}
+
+const char * Form::GradeTooHighException::what() const throw()
+{
+    return ("The Grade is Too high . Try again !!\n");
+}
+
+const char * Form::GradeTooLowException::what() const throw()
+{
+    return ("The Grade is Too Low . Try again !!\n");
+}
+const char * Form::FormNotSignedException::what() const throw()
+{
+    return ("Form is not signed . Try again !!\n");
 }

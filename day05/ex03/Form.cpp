@@ -68,3 +68,17 @@ void Form::execute(Bureaucrat const &executor) const
 		throw GradeTooLowException();
 	Action();
 }
+
+const char * Form::GradeTooHighException::what() const throw()
+{
+    return ("The Grade is Too high . Try again !!\n");
+}
+
+const char * Form::GradeTooLowException::what() const throw()
+{
+    return ("The Grade is Too Low . Try again !!\n");
+}
+const char * Form::FormNotSignedException::what() const throw()
+{
+    return ("Form is not signed . Try again !!\n");
+}

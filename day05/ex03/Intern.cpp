@@ -29,7 +29,6 @@ Form *Intern::Shrubbery(std::string form_name, std::string target)
 
 Form *Intern::makeForm(std::string form_name, std::string target)
 {
-	// typedef Form *(Intern::*Forms)(std::string, std::string);
 	Form *(Intern::*forms[3])(std::string,std::string) = {&Intern::RobotMyRequest, &Intern::PresidentialPardon, &Intern::RobotMyRequest};
 	std::string names[3] = {"RobotMy Request", "Presidential Pardon", "Shrubbery Creation"};
 

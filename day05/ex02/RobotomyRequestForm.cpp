@@ -21,6 +21,12 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) : Form
     this->target = copy.target;
 }
 
+RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &rhs)
+{
+    this->target = rhs.target;
+    return (*this);
+}
+
 void RobotomyRequestForm::Action() const 
 {
 	int now;

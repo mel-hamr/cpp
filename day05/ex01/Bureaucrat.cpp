@@ -64,5 +64,14 @@ void	Bureaucrat::signForm(Form &form)
 	}
 	else
 		std::cout << this->Name << " cannot signs " << form.getName() << " because it is already signed "<<std::endl;
-		
+}
+
+const char * Bureaucrat::GradeTooHighException::what()const throw()
+{
+    return ("The Grade is Too high . Try again !!\n");
+}
+
+const char * Bureaucrat::GradeTooLowException::what()const throw()
+{
+    return ("The Grade is Too Low . Try again !!\n");
 }

@@ -21,6 +21,12 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) 
     this->target = copy.target;
 }
 
+ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreationForm &rhs)
+{
+    this->target = rhs.target;
+    return (*this);
+}
+
 void ShrubberyCreationForm::Action() const 
 {
 	std::ofstream ofs(this->target + "_shrubbery");
@@ -40,4 +46,9 @@ void ShrubberyCreationForm::Action() const
 	ofs <<"       ||       " << std::endl;
 
 	ofs.close();
+}
+
+const char * ShrubberyCreationForm::FileNotOpenExeception::what() const throw()
+{
+    return (" File is did not open ");
 }
