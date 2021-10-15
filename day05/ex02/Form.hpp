@@ -18,8 +18,8 @@ class Form
         Form &operator=(const Form &rhs);
 
         const std::string getName() const ;
-        const int getGradeToSign() const;
-        const int getGradeToExecute() const;
+        int getGradeToSign() const;
+        int getGradeToExecute() const;
         bool getSign()const ;
         void    beSigned(Bureaucrat &bureaucrat);
         virtual void    Action() const  = 0;

@@ -1,11 +1,11 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : Form("Robot",25,5)
+PresidentialPardonForm::PresidentialPardonForm() : Form("Presidental",25,5)
 {
     this->target = "home";
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target, std::string name) : Form(name,25,5)
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("Presidental",25,5)
 {
     this->target = target;
 }

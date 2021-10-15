@@ -6,7 +6,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : Form("shrubbery",145,137)
     this->target = "home";
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target, std::string name) : Form(name,145,137)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("Shrubbery",145,137)
 {
     this->target = target;
 }
