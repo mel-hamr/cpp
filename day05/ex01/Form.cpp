@@ -29,15 +29,15 @@ Form & Form::operator=(const Form &rhs)
     return (*this);
 }
 
-const std::string Form::getName() const
+std::string Form::getName() const
 {
     return (Name);
 }
-const int Form::getGradeToSign()
+int Form::getGradeToSign()
 {
     return (Grade_to_sign);
 }
-const int Form::getGradeToExecute()
+int Form::getGradeToExecute()
 {
     return (Grade_to_execute);
 }
@@ -54,7 +54,7 @@ void    Form::beSigned(Bureaucrat &bureaucrat)
 }
 std::ostream & operator<<(std::ostream & out,Form  &a)
 {
-	out << a.getName() << " Form status " << a.getSign() << " Grade to sign" <<  a.getGradeToSign() << " Grade to execute "
+	out << a.getName() << std::endl<<"Form status :" << a.getSign()  <<" Grade to sign :" <<  a.getGradeToSign() << " Grade to execute : "
     << a.getGradeToExecute() <<std::endl;
 	return(out);
 }

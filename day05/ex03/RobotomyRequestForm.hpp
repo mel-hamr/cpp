@@ -10,7 +10,7 @@ class RobotomyRequestForm : public Form
     public:
         RobotomyRequestForm();
         ~RobotomyRequestForm();
-        RobotomyRequestForm(std::string target,std::string name);
+        RobotomyRequestForm(std::string target);
         RobotomyRequestForm(const RobotomyRequestForm &bery);
         RobotomyRequestForm & operator=(const RobotomyRequestForm &rhs);
         void    Action()const ;

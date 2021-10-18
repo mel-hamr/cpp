@@ -1,12 +1,12 @@
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : Form("Robot",72,45)
+RobotomyRequestForm::RobotomyRequestForm() : Form("Roboto",72,45)
 {
     this->target = "home";
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target, std::string name) : Form(name,72,45)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("Roboto",72,45)
 {
     this->target = target;
 }

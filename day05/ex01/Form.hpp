@@ -6,7 +6,7 @@ class Bureaucrat;
 class Form
 {
     private :
-        std::string Name;
+        const std::string Name;
         const   int Grade_to_sign;
         const   int Grade_to_execute;
         bool    Signed;
@@ -17,9 +17,9 @@ class Form
         Form(const Form &copy);
         Form &operator=(const Form &rhs);
 
-        const std::string getName()const ;
-        const int getGradeToSign();
-        const int getGradeToExecute();
+        std::string getName()const ;
+        int getGradeToSign();
+        int getGradeToExecute();
         bool getSign()const ;
         void    beSigned(Bureaucrat &bureaucrat);
     class GradeTooHighException : public std::exception 

@@ -1,4 +1,3 @@
-#include <iostream>
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm() : Form("shrubbery",145,137)
@@ -6,7 +5,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : Form("shrubbery",145,137)
     this->target = "home";
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target, std::string name) : Form(name,145,137)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("shreubbery",145,137)
 {
     this->target = target;
 }

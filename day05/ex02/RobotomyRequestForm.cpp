@@ -1,7 +1,7 @@
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : Form("Robotp",72,45)
+RobotomyRequestForm::RobotomyRequestForm() : Form("Roboto",72,45)
 {
     this->target = "home";
 }

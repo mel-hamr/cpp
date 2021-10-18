@@ -5,17 +5,26 @@ int main()
 {
     try
     {
-        Form f("req",50,25);
-        Bureaucrat b("nigga",50);
-        // b.Increment();
-        b.signForm(f);
+        Form f("ID_FORM",50,25);
+        Bureaucrat b("Hamid",51);
         b.signForm(f);
 
-        // std::cout << b << std::endl;
+        std::cout << f ;
     }
     catch (const std::exception &e)
     {
         std::cerr << e.what() ;
     }
-    
+
+    try
+    {
+        Form f("passport",20,25);
+        Bureaucrat b("Hamid",50);
+        b.signForm(f);
+        
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << e.what() ;
+    }
 }

@@ -11,13 +11,13 @@ class Intern
 {
 private:
 public:
-	Form *RobotMyRequest(std::string form_name, std::string target);
-	Form *PresidentialPardon(std::string form_name, std::string target);
-	Form *Shrubbery(std::string form_name, std::string target);
+	Form *RobotMyRequest(std::string target);
+	Form *PresidentialPardon(std::string target);
+	Form *Shrubbery(std::string target);
 	Form *makeForm(std::string form_name, std::string target);
 	Intern();
 	Intern(const Intern &);
-	Form &operator=(const Form &);
+	Intern &operator=(const Intern &);
 	~Intern();
 	class UnknownFormExeception : public std::exception
 	{
