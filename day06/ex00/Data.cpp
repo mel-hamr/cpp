@@ -100,7 +100,7 @@ void Data::SetTypes()
 		v_float = static_cast<float>(v_char);
 		v_double = static_cast<double>(v_char);
 
-		if (!std::isprint(v_char))
+		if (!std::isprint(v_int))
 			T_indisponible = true;
 	}
 	else if (this->type == "int")
@@ -116,7 +116,7 @@ void Data::SetTypes()
 		v_char = static_cast<char>(v_int);
 		v_float = static_cast<float>(v_int);
 		v_double = static_cast<double>(v_int);
-		if (!std::isprint(v_char))
+		if (!std::isprint(v_int))
 		{
 			T_indisponible = true;
 		}
@@ -130,7 +130,7 @@ void Data::SetTypes()
 		v_double = static_cast<double>(v_float);
 		v_char = static_cast<char>(v_float);
 
-		if (!std::isprint(v_char))
+		if (!std::isprint(v_int))
 		{
 			T_indisponible = true;
 		}
@@ -141,7 +141,7 @@ void Data::SetTypes()
 		v_float = static_cast<float>(v_double);
 		v_int = static_cast<float>(v_double);
 		v_char = static_cast<float>(v_double);
-		if (!std::isprint(v_char))
+		if (!std::isprint(v_int))
 			T_indisponible = true;
 	}
 }
@@ -180,9 +180,9 @@ void Data::setPrecision(void)
 	{
 		this->precesion = str.find(".");
 		this->precesion = (str.length() - this->precesion - 1);
-        if(str.find(".") == str.length() -1)
+        if(str.find(".") == str.length() -1 )
             this->precesion++;
-		if (type == "float")
+		if (type == "float" && !(str.find(".") == str.find("f") -1 ) )
 			this->precesion--;
 	}
 	else
