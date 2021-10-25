@@ -5,31 +5,41 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-hamr <mel-hamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/23 17:24:53 by mel-hamr          #+#    #+#             */
-/*   Updated: 2021/10/23 17:51:52 by mel-hamr         ###   ########.fr       */
+/*   Created: 2021/10/23 17:22:12 by mel-hamr          #+#    #+#             */
+/*   Updated: 2021/10/23 17:23:03 by mel-hamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
 #include <iostream>
 #include "Data.hpp"
 
-
-int main(int ac , char **av)
+uintptr_t serialize(Data* ptr)
 {
-    if(ac != 2)
-    {
-        std::cout << "invalide arguments" <<std::endl;
-        return 1;
-    }
-    Data    data(av[1]);
-    if(data.check_error() == 1)
-    {
-        std::cout << "invalide Type" <<std::endl;
-        return 1;
-    }
-    data.Parsetype();
-    data.SetTypes();
-    data.printTypes();
-    return (0);
+	std::cout << "serialize called!!" << std::endl;
+	return (reinterpret_cast<uintptr_t>(ptr));
+}
+
+Data* deserialize(uintptr_t raw)
+{
+	std::cout << "deserialize called!!" << std::endl;
+	return (reinterpret_cast<Data *>(raw));
+}
+
+int	main()
+{
+	Data *d = new Data();
+	uintptr_t raw = 5;
+
+	d->x = 5;
+	d->y = 10;
+
+	std::cout << d->x << std::endl;
+	std::cout << d->y << std::endl;
+	raw = serialize(d);
+
+	Data *d2;
+
+	d2 = deserialize(raw);
+	std::cout << d2->x << std::endl;
+	std::cout << d2->y << std::endl;
 }
