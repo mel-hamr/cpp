@@ -3,7 +3,10 @@
 
 #include <iostream>
 #include <vector>
+<<<<<<< HEAD
 #include <algorithm>
+=======
+>>>>>>> 343becd5283d9dcc4e3d2804482b932514725e6e
 
 class Span
 {
@@ -19,6 +22,7 @@ class Span
 				return ("the vector limits reached !!");
 			}
 		};
+<<<<<<< HEAD
 		class NoSpan : public std::exception
 		{
 			const char *what() const throw(){
@@ -34,6 +38,8 @@ class Span
 				first++;
     		}
 		}
+=======
+>>>>>>> 343becd5283d9dcc4e3d2804482b932514725e6e
 		void addNumber(int number);
 		int shortestSpan();
 		int longestSpan();

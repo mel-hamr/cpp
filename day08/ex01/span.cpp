@@ -12,7 +12,11 @@ Span::Span(unsigned int N) : _N(N)
 
 void Span::addNumber(int number)
 {
+<<<<<<< HEAD
     if(this->_Numbers.size() + 1 <= this->_N)
+=======
+    if(this->_Numbers.size() + 1 < this->_N)
+>>>>>>> 343becd5283d9dcc4e3d2804482b932514725e6e
 	    _Numbers.push_back(number);
     else
         throw FullVector();
@@ -22,6 +26,7 @@ int Span::longestSpan()
 {
 	int bigest;
 	int smallest;
+<<<<<<< HEAD
 	std::vector<int>::iterator it;
 
 	if (this->_Numbers.size() >= 2)
@@ -33,11 +38,31 @@ int Span::longestSpan()
 	}
 	else
 		throw NoSpan();
+=======
+
+	bigest = _Numbers[0];
+	smallest = _Numbers[0];
+	for (unsigned int i = 0; i < _N; i++)
+	{
+		if (i < _N - 1)
+		{
+			if (_Numbers[i + 1] > bigest)
+			{
+				bigest = _Numbers[i + 1];
+			}
+			if (_Numbers[i + 1] < smallest)
+			{
+				smallest = _Numbers[i + 1];
+			}
+		}
+	}
+>>>>>>> 343becd5283d9dcc4e3d2804482b932514725e6e
 	return (bigest - smallest);
 }
 
 int Span::shortestSpan()
 {
+<<<<<<< HEAD
 	int temp;
 
 	std::vector<int> vector_tmp = _Numbers;
@@ -56,6 +81,11 @@ int Span::shortestSpan()
 		throw NoSpan();
 	return (temp);
 }
+=======
+
+}
+
+>>>>>>> 343becd5283d9dcc4e3d2804482b932514725e6e
 Span::~Span()
 {
 

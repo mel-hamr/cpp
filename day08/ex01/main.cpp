@@ -3,6 +3,7 @@
 int main()
 {
     Span sp = Span(5);
+<<<<<<< HEAD
     try
     {
         sp.addNumber(5);
@@ -50,4 +51,13 @@ int main()
         std::cerr << e.what() << std::endl;
     }
 
+=======
+    sp.addNumber(5);
+    sp.addNumber(3);
+    sp.addNumber(17);
+    sp.addNumber(9);
+    sp.addNumber(11);
+    std::cout << sp.shortestSpan() << std::endl;
+    std::cout << sp.longestSpan() << std::endl;
+>>>>>>> 343becd5283d9dcc4e3d2804482b932514725e6e
 }
